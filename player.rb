@@ -8,5 +8,7 @@ class Player
 
   end
 
-  def
+  def exit
+
+  end
 end

@@ -18,3 +18,8 @@ class board
     @board.each do |line|
       p line.join
   end
+
+  def check_for_victory
+
+  end
+end
