@@ -1,4 +1,4 @@
-class board
+class Board
   attr_reader :board
   attr_writer :board
 
@@ -17,6 +17,7 @@ class board
   def display_board
     @board.each do |line|
       p line.join
+    end
   end
 
   def check_for_victory
