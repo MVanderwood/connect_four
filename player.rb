@@ -23,6 +23,6 @@ class Player
         break
       end   
     end
-    return [move_x, move_y]
+    return [move_y, move_x]
   end
 end

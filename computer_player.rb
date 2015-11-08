@@ -22,7 +22,7 @@ class Computer_player
     board.each do |line|
       p line.join
     end
-    return [move_x, move_y]
+    return [move_y, move_x]
   end
 
 end
