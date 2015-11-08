@@ -32,6 +32,7 @@ def player_turn
   end
 end
 
+
 @board = Board.new
 @player = Player.new
 @computer_player = Computer_player.new
