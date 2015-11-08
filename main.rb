@@ -7,11 +7,16 @@ def player_turn
     puts "It's your turn, what would you like to do?"
     input = gets.chomp
     if input == "board"
-      #display board via player.board method
+      @player.board(@board)
       break
     elsif input == "move"
-      #run player.move method
-      break
+      p "Which slot would you like to move on?"
+      move_input = gets.chomp.to_i
+      if (1..7).include?(move_input)
+        #run player.move method
+      else
+        p "ERROR! INVALID MOVE."
+      end
     elsif input == "save"
       #run game.save method (way down the road)
       break
@@ -26,3 +31,9 @@ def player_turn
     end
   end
 end
+
+@board = Board.new
+@player = Player.new
+@computer_player = Computer_player.new
+
+player_turn

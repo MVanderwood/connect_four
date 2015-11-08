@@ -1,6 +1,5 @@
 class Board
-  attr_reader :board
-  attr_writer :board
+  attr_accessor :board
 
   def initialize
     @board = [

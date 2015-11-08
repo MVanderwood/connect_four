@@ -1,6 +1,10 @@
 class Player
 
-  def board
+  def board(board)
+    board = board.board
+    board.each do |row|
+      p row.join
+    end
 
   end
 
