@@ -15,6 +15,7 @@ def player_turn
       if (0..6).include?(move_input)
         @player.move(move_input, @board.board)
         @player.board(@board)
+        break
       else
         p "ERROR! INVALID MOVE."
       end
@@ -33,10 +34,6 @@ def player_turn
   end
 end
 
-def computer_turn
-
-end
-
 @game_on = true
 @board = Board.new
 @player = Player.new
@@ -44,6 +41,9 @@ end
 
 while @game_on
   player_turn
+  if @game_on
+    @computer_player.move(@board)
+  end
 end
 
 
