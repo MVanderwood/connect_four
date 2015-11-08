@@ -25,6 +25,7 @@ def player_turn
       #run game.load method
       break
     elsif input == "exit"
+      @game_on = false
       break
     else
       puts "Please use a proper command."
@@ -36,8 +37,34 @@ def computer_turn
 
 end
 
+@game_on = true
 @board = Board.new
 @player = Player.new
 @computer_player = Computer_player.new
 
-player_turn
+while @game_on
+  player_turn
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
