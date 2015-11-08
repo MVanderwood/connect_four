@@ -11,9 +11,10 @@ def player_turn
       break
     elsif input == "move"
       p "Which slot would you like to move on?"
-      move_input = gets.chomp.to_i
-      if (1..7).include?(move_input)
-        #run player.move method
+      move_input = gets.chomp.to_i - 1
+      if (0..6).include?(move_input)
+        @player.move(move_input, @board.board)
+        @player.board(@board)
       else
         p "ERROR! INVALID MOVE."
       end
@@ -24,7 +25,6 @@ def player_turn
       #run game.load method
       break
     elsif input == "exit"
-      #run game/player.exit method
       break
     else
       puts "Please use a proper command."
@@ -32,6 +32,9 @@ def player_turn
   end
 end
 
+def computer_turn
+
+end
 
 @board = Board.new
 @player = Player.new
