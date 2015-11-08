@@ -19,7 +19,8 @@ class Board
     end
   end
 
-  def check_for_victory
+  def check_for_victory(move_to_check)
+    p move_to_check
 
   end
 end

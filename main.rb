@@ -13,7 +13,7 @@ def player_turn
       p "Which slot would you like to move on?"
       move_input = gets.chomp.to_i - 1
       if (0..6).include?(move_input)
-        @player.move(move_input, @board.board)
+        @move_to_check = @player.move(move_input, @board.board)
         @player.board(@board)
         break
       else
@@ -41,8 +41,10 @@ end
 
 while @game_on
   player_turn
+  @board.check_for_victory(@move_to_check)
   if @game_on
-    @computer_player.move(@board)
+    move_to_check = @computer_player.move(@board)
+    @board.check_for_victory(move_to_check)
   end
 end
 
